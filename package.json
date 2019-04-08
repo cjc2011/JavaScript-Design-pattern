@@ -19,8 +19,6 @@
   },
   "homepage": "https://github.com/cjc2011/JavaScript-Design-pattern#readme",
   "devDependencies": {
-    "babel-plugin-transform-decorators-legacy": "^1.3.5",
-    "babel-register": "^6.26.0",
     "clean-webpack-plugin": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.29.6",
