@@ -48,19 +48,24 @@ class Car {
 
 // 停车场
 class Park {
+  
   constructor(floors) {
+    // 传入停车的每一层[floor, floor, floor]
     this.floors = floors || []
+    // 初始化摄像头对象 返回对象的shot方法接收car的对象
     this.camera = new Camera()
+    // 初始化显示屏对象 返回对象的show方法接收car inTime参数
     this.screen = new Screen()
+    // 存储进入存车场车辆的信息
     this.carList = {}       // 存储摄像头拍摄的返回车辆信息
   }
 
   in(car) {
     // 通过摄像头获取信息
     const info = this.camera.shot(car)
-    // ting到某个停车位
+    // 生成车位的随机数
     const i = parseInt(Math.random() * 100 % 100)
-    console.log(i, 'i')
+    
     const place = this.floors[0].places[i]
     place.in()
     info.place = place
@@ -86,6 +91,7 @@ class Park {
 
 }
 
+//摄像头 记录车牌号 进入时间
 class Camera {
   shot(car) {
     return  {
@@ -136,10 +142,13 @@ class Place {
   }
 }
 
+// 初始化一个存放停车楼层的数组
 const floors = []
 for (let i = 0; i < 3; i++) {
+  // 每一楼层停车位的数组
   const places = []
   for (let j = 0; j < 100; j++) {
+    // 初始化每一个车位
     places[j] = new Place()
   }
   floors[i] = new Floor(i+1, places)

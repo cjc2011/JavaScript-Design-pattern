@@ -21,5 +21,5 @@ class Creator {
 
 let creator = new Creator()
 let p = creator.create('p1')
-p.init()
-p.fn1()
+// p.init()
+// p.fn1()
