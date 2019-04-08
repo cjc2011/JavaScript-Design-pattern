@@ -1,3 +1,7 @@
+import './单例模式.js'
+import './工厂模式.js'
+import './装饰器模式.js'
+
 // 打车类的实现
 // class Car {
 //   constructor(number, name) {
@@ -155,7 +159,6 @@ for (let i = 0; i < 3; i++) {
 }
 
 const park = new Park(floors)
-console.log(park, 'park')
 
 const car1 = new Car(100)
 const car2 = new Car(200)
@@ -167,7 +170,6 @@ park.in(car1)
 console.log('第二辆车进入前')
 console.log('每层停车数量', park.emtypeNum())
 park.in(car2) 
-console.log(park, 'park')
 // console.log('第一辆车离开')
 // park.out(car1)
 // console.log('每层停车数量', park.emtypeNum())
