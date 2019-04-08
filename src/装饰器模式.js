@@ -25,14 +25,50 @@ decorator_circle.setRedBorder(circle)
 
 //==================================
 
-// @demo(false)
-// class Test {
+@demo(false)
+class Test {
 
-// }
+}
 
-// alert(Test.isDec)
+console.log(Test.isDec)
 function demo(isDec) {
   return function(target) {
     target.isDec = isDec
   }
 }
+
+
+// 案例 mixin
+let Foo = {
+  foo() {
+    console.log('Foo.foo')
+  }
+}
+
+function mixin(...list) {
+  return function(target) {
+    Object.assign(target.prototype, ...list)
+  }
+}
+
+function readonly(target, name, descriptor) {
+  descriptor.writable = false 
+  return descriptor
+}
+
+@mixin(Foo)
+class Myclass {
+  constructor(sex) {
+    this.sex = sex
+  }
+
+  @readonly  
+  setsex() {
+    this.sex = '男'
+  }
+}
+
+var myClass = new Myclass()
+
+myClass.foo()
+

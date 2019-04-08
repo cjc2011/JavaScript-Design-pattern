@@ -22,6 +22,11 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: [
+      '.js'
+    ]
+  },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
